@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+header, main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    height: 50px;
+}
+
+header, main, footer{
+    width: 100vw;
+}
+
+footer{
+    position: relative;
+    bottom: 0
+}
+
+main {
+    margin: 15px;
+}
+
+/* header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+} */
+
+h1.logo{
+    text-align: center;
+    margin: 0;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.wrap{
+    width: 1200px;
+    max-width: 90vw;
+    margin: auto;
+}
+
+header .wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu{
+    display: flex;
+}
+
+p{
+    margin: 10px 0;
+}
+
+.contact .wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.contact .wrap span > *{
+    text-decoration: none;
+    color: inherit;
+    font-size: large;
+}
+
+.contact .wrap span > *:hover{
+    opacity: 80%;
+}
+
+.copy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+}
+
+.button{
+    padding: 15px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.button:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.mobile-only{
+    display: none;
+}
+
+.display-visible{
+    display: flex;
+}
+
+
+
+@keyframes openMenu {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+@media screen and (max-width: 720px){
+    .desktop-only{
+        display: none;
+    }
+    .mobile-only{
+        display: flex;
+    }
+    div.menu-mobile{
+        position: absolute;
+        right: 0;
+        top: 50px;
+    }
+    div.menu-mobile menu > *{
+        transform: translateX(100%);
+        background-color: white;
+    }
+    .opened{
+        animation: openMenu 200ms ease-in-out calc(var(--i) * 50ms) 1 normal forwards;
+    }
+}
