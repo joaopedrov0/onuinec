@@ -16,11 +16,12 @@ body{
 header, main{
     display: flex;
     justify-content: center;
-    align-items: center;
+    
 }
 
 header{
     height: 50px;
+    align-items: center;
 }
 
 header, main, footer{
@@ -29,11 +30,16 @@ header, main, footer{
 
 footer{
     position: relative;
-    bottom: 0
+    bottom: 0;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 main {
     margin: 15px;
+    min-height: calc(100vh - 170px);
 }
 
 /* header{
@@ -43,20 +49,29 @@ main {
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
 } */
 
-h1.logo{
+h1.logo, h2.logo, h2.logo a{
     text-align: center;
     margin: 0;
     font-weight: 900;
     color: rgba(0, 0, 0, 0.85);
+    width: 150px;
+    height: 40px;
+    font-size: 32px;
+
+    text-decoration: none;
+}
+
+h2.logo:hover{
+    cursor: pointer;
 }
 
 .wrap{
-    width: 1200px;
+    width: 960px;
     max-width: 90vw;
-    margin: auto;
+    margin: 0 auto;
 }
 
-header .wrap{
+header, header > .wrap{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -92,6 +107,8 @@ p{
     justify-content: center;
     align-items: center;
     padding: 3px;
+    color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .button{
@@ -116,7 +133,38 @@ p{
     display: flex;
 }
 
+.current-page{
+    color: var(--color-2);
+    box-shadow: inset 0px -5px 5px -5px var(--color-2);
+}
 
+.current-page:hover{
+    background-color: white;
+}
+
+a{
+    color: rgba(0, 0, 0, 0.85);
+    text-decoration: none;
+}
+
+a:hover{
+    opacity: 80%;
+}
+
+ol, ul{
+    margin: 15px 0;
+    padding: 0 0 0 20px;
+}
+dd{
+    margin-left: 10px;
+}
+ol > li{
+    margin: 5px 0;
+}
+
+p, h1, h2, h3, h4, h5, h6, li{
+    color: rgba(0, 0, 0, 0.85);
+}
 
 @keyframes openMenu {
     0%{
@@ -145,5 +193,10 @@ p{
     }
     .opened{
         animation: openMenu 200ms ease-in-out calc(var(--i) * 50ms) 1 normal forwards;
+    }
+
+    .current-page{
+        color: var(--color-2);
+        box-shadow: inset -15px 0px 30px -25px var(--color-2);
     }
 }
