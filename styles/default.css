@@ -168,6 +168,10 @@ p, h1, h2, h3, h4, h5, h6, li{
     color: rgba(0, 0, 0, 0.85);
 }
 
+ol, ul li {
+    overflow-x: visible;
+}
+
 @keyframes openMenu {
     0%{
         transform: translateX(100%);
